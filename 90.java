@@ -11,9 +11,10 @@ public class Solution {
     public void helper(int[] nums, int start, List<List<Integer>> res, List<Integer> comb) {
         
         res.add(new ArrayList<Integer>(comb));
+        
         for(int i = start; i < nums.length; i++) {
             
-            if(i > start && nums[i] == nums[i-1]) continue;
+            if(i > start && nums[i] == nums[i-1]) continue; //skip duplicate subsets and i>start must be written first
             
             comb.add(nums[i]);
             helper(nums, i+1, res, comb);
